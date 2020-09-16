@@ -117,7 +117,7 @@ double max_lambda(List& dt){
     for(int j=K1(i); j<K1(i+1); j++){
       l_new(j-K1(i)) = rb(j);
     }
-    lmd(i) = l_new.norm()/(N*sqrt(kg));
+    lmd(i) = l_new.norm()/(N*sqrt((double)(kg)));
   }
   return (lmd.maxCoeff());
 }
@@ -278,7 +278,7 @@ List grpCoxQ(List& dt, const char* penalty, Eigen::VectorXd lambda, int nlambda,
           for(int i=0; i<ig; i++){
             if(e(i)){
               kg = K1(i+1)-K1(i);
-              lambdaj = lambda(il)*sqrt(kg);
+              lambdaj = lambda(il)*sqrt((double)(kg));
               l_new = Eigen::VectorXd::Zero(kg);
               for(int j=K1(i); j<K1(i+1); j++){
                 l_new(j-K1(i)) = rb(j)/tau + beta0(j);
@@ -366,7 +366,7 @@ List grpCoxQ(List& dt, const char* penalty, Eigen::VectorXd lambda, int nlambda,
         for(int i=0; i<ig; i++){
           if(e(i)==0){
             kg = K1(i+1)-K1(i);
-            lambdaj = lambda(il)*sqrt(kg);
+            lambdaj = lambda(il)*sqrt((double)(kg));
             l_new = Eigen::VectorXd::Zero(kg);
             for(int j=K1(i); j<K1(i+1); j++){
               l_new(j-K1(i)) = rb(j)/tau + beta0(j);
@@ -575,7 +575,7 @@ List cvgrpCoxQ(List& dt, const char* penalty, Eigen::VectorXd lambda, int nlambd
           for(int i=0; i<ig; i++){
             if(e(i)){
               kg = K1(i+1)-K1(i);
-              lambdaj = lambda(il)*sqrt(kg);
+              lambdaj = lambda(il)*sqrt((double)(kg));
               l_new = Eigen::VectorXd::Zero(kg);
               for(int j=K1(i); j<K1(i+1); j++){
                 l_new(j-K1(i)) = rb(j)/tau + beta0(j);
@@ -663,7 +663,7 @@ List cvgrpCoxQ(List& dt, const char* penalty, Eigen::VectorXd lambda, int nlambd
         for(int i=0; i<ig; i++){
           if(e(i)==0){
             kg = K1(i+1)-K1(i);
-            lambdaj = lambda(il)*sqrt(kg);
+            lambdaj = lambda(il)*sqrt((double)(kg));
             l_new = Eigen::VectorXd::Zero(kg);
             for(int j=K1(i); j<K1(i+1); j++){
               l_new(j-K1(i)) = rb(j)/tau + beta0(j);
