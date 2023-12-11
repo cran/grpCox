@@ -20,7 +20,7 @@ standardize=TRUE, thresh=1e-3, maxit=1e+4, nfolds=10, foldid=NULL)
   \item{penalty}{The penalty to be applied to the model. It is one of \code{glasso}, \code{gSCAD}, or \code{gMCP}.}
   \item{lambda}{A user supplied sequence of \code{lambda} values. If it is left unspecified, and the function automatically computes a grid of lambda values.}
   \item{nlambda}{The number of \code{lambda} values to use in the regularization path.  Default is 100.}
-  \item{rlambda}{Smallest value for lambda, as a fraction of the maximum lambda, the (data derived) entry value (i.e. the smallest value for which all coefficients are zero). The default depends on the sample size relative to the number of covariates. If sample size>#covariates, the default is {0.001}, close to zero.  If sample size>#covariates, the default is 0.05.}
+  \item{rlambda}{Smallest value for lambda, as a fraction of the maximum lambda, the data derived entry value, i.e. the smallest value for which all coefficients are zero. The default depends on the sample size relative to the number of covariates. If sample size>#covariates, the default is 0.001, close to zero.  If sample size>#covariates, the default is 0.05.}
   \item{gamma}{Tuning parameter of the group SCAD/MCP penalty.  Default is 3.7 for SCAD and 3 for MCP.}
   \item{standardize}{Logical flag for variable standardization prior to fitting the model.}
   \item{thresh}{Convergence threshold for one-step coordinate descent. Defaults value is 1E-7.}

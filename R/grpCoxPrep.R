@@ -137,7 +137,7 @@ reorderG <- function(g, m) {
 ### expanded latent matrix 
 expandedlatent <- function(x, group){
   # check whether or not group is a list
-  if(class(group) != 'list'){
+  if(!inherits(group, 'list')){
     stop("group must be a list of numeric indices of variables")
   }
   # number of group

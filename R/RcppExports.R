@@ -47,5 +47,5 @@ cvgrpCoxQ <- function(dt, penalty, lambda, nlambda, gamma, thresh, maxit, dF) {
 
 # Register entry points for exported C++ functions
 methods::setLoadAction(function(ns) {
-    .Call('_grpCox_RcppExport_registerCCallable', PACKAGE = 'grpCox')
+    .Call(`_grpCox_RcppExport_registerCCallable`)
 })
